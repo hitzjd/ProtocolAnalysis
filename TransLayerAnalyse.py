@@ -8,7 +8,7 @@ class TransLayerAnalyse:
 		print '__init__'
 
 	# 解析TCP包头
-	def UnpackTcpHeader(self,packet):
+	def Unpack_Tcp_Header(self,packet):
 		print "unpack tcp header"
 		translayer = {} #传输层信息
 		translayer['Type'] = 'tcp'
@@ -21,7 +21,7 @@ class TransLayerAnalyse:
 		return translayer,packet[header_len*2:]          #返回TCP包头解析结果，TCP包数据部分
 
 	# 解析UDP包头
-	def UnpackUdpHeader(self,packet):
+	def Unpack_Udp_Header(self,packet):
 		print "unpack udp header"
 		translayer['Type'] = 'udp'
 		translayer['UdpSrcPort'] = hex2dec (packet[0:4])   #源端口 

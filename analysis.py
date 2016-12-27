@@ -14,14 +14,14 @@ class AnalysePacket:
 
 
 	# 解析一个数据包信息
-	def AnalysisOne(self,packet):
-		self.packet_info['TransLayerInfo'],app_packet = self.trans_analyse.UnpackTcpHeader(packet)
-		self.packet_info['AppLayerInfo'] = self.app_analyse.UnpackIec104Header(app_packet)
+	def Analysis_One(self,packet):
+		self.packet_info['TransLayerInfo'],app_packet = self.trans_analyse.Unpack_Tcp_Header(packet)
+		self.packet_info['AppLayerInfo'] = self.app_analyse.Unpack_Iec104_Header(app_packet)
 
 if __name__ == '__main__':
 	packet = 'eb9b0964a0af2a37cd9102f85018010088a60000680407000000'
 	ap = AnalysePacket() 
-	app_info = ap.AnalysisOne(packet)
+	app_info = ap.Analysis_One(packet)
 	print ap.packet_info
 
 

@@ -8,7 +8,7 @@ class AppLayerAnalyse:
 		print '__init__'
 
 	# 解析IEC104协议
-	def UnpackIec104Header(self,packet):
+	def Unpack_Iec104_Header(self,packet):
 		print "unpack iec104 header"
 		if not hex2dec (packet[0:2]) == 104:
 			print "not iec104"
