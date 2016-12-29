@@ -6,16 +6,16 @@ analysis.py
 util.py
     公共方法类
 
-PcapAnalyse.py
-	解析pcap文件信息
+pcap.py
+	解析pca包头部信息
 
-PhysicalAnalyse.py
-	解析原始数据包，得到时间戳，总包长信息
-
+AnalysePhysical.py
+	解析物理层协议信息，并返回包长度
+	
 AnalyseEthernet.py
 	解析链路层协议信息
 
-InternetAnalyse.py
+AnalyseInternet.py
 	解析网络层协议信息
 
 TransLayerAnalyse.py
@@ -24,3 +24,4 @@ TransLayerAnalyse.py
 AppLayerAnalyse.py
 	解析应用层协议信息
 
+进制及/x问题，暂时unpack("B",...)
