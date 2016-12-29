@@ -22,5 +22,8 @@ class PcapAnalyse:
 		self.packet_info['Pcapheader'] = pcap_header
 		return packet[16:]                   #返回文件数据部分		
 
+	# 在此将得到数据包列表
+	# 。。。。
+
 if __name__ == '__main__':
 	print 'PcapAnalyse.py'
