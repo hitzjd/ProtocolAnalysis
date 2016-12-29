@@ -42,12 +42,17 @@ if __name__ == '__main__':
 	fpcap = open('pcap_file/target.cap','rb')
 	string_data = fpcap.read()
 	n = len(string_data)
-	#print repr(string_data)
-	print struct.unpack('13178979B',string_data)
-	#string_data = struct.unpack('13178979B',string_data) 	#修改，试图读入转换为一字节的无符号数，但这里需要输入具体数字，需修改
+	print string_data
+	# print string_data[0:4]
+	# print repr(string_data)[0:100]
+	# print struct.unpack('13178979B',string_data)
+	# string_data = struct.unpack('13178979B',string_data) 	#修改，试图读入转换为一字节的无符号数，但这里需要输入具体数字，需修改
 	
-	pcap_header,string_data = AnalysePcap().unpack_pcap_header(string_data)
+	pcap_header,string_data = PcapAnalyse().unpack_pcap_header(string_data)
+	print pcap_header,string_data
 	#print n
+
+	'''
 	#pcap文件的数据包解析
 	i =24 #pcap文件头24字节	
 	while (i<n):
@@ -59,5 +64,6 @@ if __name__ == '__main__':
 		#print i,packetlength,len(packet)
 		i = i+ packetlength+16
 		
+	'''
 		
 	fpcap.close()

@@ -9,7 +9,7 @@ from util.util import hex2dec
 class PcapAnalyse:
 	def __init__(self):
 		print "__init__"
-		self.packet_info = {}
+		#self.packet_info = {}
 	
 	#pcap文件包头解析
 	def unpack_pcap_header(self,packet):
@@ -21,8 +21,8 @@ class PcapAnalyse:
 		pcap_header['Sigfigs'] = packet[12:16]
 		pcap_header['Snaplen'] = packet[16:20]
 		pcap_header['Linktype'] = packet[20:24]
-		self.packet_info['Pcapheader'] = pcap_header
-		return packet[16:]                   #返回文件数据部分		
+		#self.packet_info['Pcapheader'] = pcap_header
+		return pcap_header,packet[24:]                   #返回文件头部，文件数据部分
 
 	# 在此将得到数据包列表
 	# 。。。。
