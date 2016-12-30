@@ -13,22 +13,22 @@ util包
 analyse包
 	分析代码包
 
-	-- pcap_analyse.py
+	-- analyse_pcap.py
 		解析pcap文件信息
 
-	-- physical_analyse.py
+	-- analyse_physical.py
 		解析原始数据包，得到时间戳，总包长信息
 
-	-- ethernet_analyse.py
+	-- analyse_ethernet.py
 		解析链路层协议信息
 
-	-- internet_analyse.py
+	-- analyse_internet.py
 		解析网络层协议信息
 
-	-- trans_analyse.py
+	-- analyse_transport.py
 		解析传输层协议信息
 
-	-- app_analyse.py
+	-- analyse_application.py
 		解析应用层协议信息
 
 

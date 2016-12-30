@@ -5,7 +5,7 @@ sys.path.append('..')
 from util.util import hex2dec
 
 # 解析传输层协议
-class TransAnalyse:
+class AnalyseTransport:
 	def __init__(self):
 		print '__init__'
 

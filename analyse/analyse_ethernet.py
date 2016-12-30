@@ -6,7 +6,7 @@ import sys
 sys.path.append('..')
 from util.util import hex2dec
 
-class EthernetAnalyse:
+class AnalyseEthernet:
 	def __init__(self):
 		print "__init__"
 		#self.packet_info = {}

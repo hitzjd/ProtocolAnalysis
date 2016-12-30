@@ -5,7 +5,7 @@ sys.path.append('..')
 from util.util import hex2dec
 
 # 解析应用层协议
-class AppAnalyse:
+class AnalyseApplication:
 	def __init__(self):
 		print '__init__'
 
