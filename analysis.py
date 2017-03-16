@@ -49,7 +49,10 @@ if __name__ == '__main__':
 	# string_data = struct.unpack('13178979B',string_data) 	#修改，试图读入转换为一字节的无符号数，但这里需要输入具体数字，需修改
 	
 	pcap_header,string_data = AnalysePcap().unpack_pcap_header(string_data)
-	print pcap_header,string_data
+	physical_header,this_string_data,string_data,length = AnalysePhysical().unpack_physical_header(string_data)
+	ethernet_header,this_string_data = AnalyseEthernet().unpack_ethernet_header(this_string_data)
+	ipv4_header,this_string_data = AnalyseInternet().unpack_ipv4_header(this_string_data)
+	print pcap_header,'\n',physical_header,'\n',ethernet_header,'\n',ipv4_header,'\n',this_string_data
 	#print n
 
 	'''

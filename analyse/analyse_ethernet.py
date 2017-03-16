@@ -14,9 +14,9 @@ class AnalyseEthernet:
 	#解析链路层协议
 	def unpack_ethernet_header(self,packet):
 		ethernet_layer = {}
-		ethernet_layer['SrcMac'] = packet[0:6] #源Mac
-		ethernet_layer['DesMac'] = packet[6:12] #目的Mac
-		ethernet_layer['Ethernettype'] = packet[12:14]   #链路层协议类型
+		ethernet_layer['SrcMac'] = struct.unpack('!3H',packet[0:6]) #源Mac
+		ethernet_layer['DesMac'] = struct.unpack('!3H',packet[6:12]) #目的Mac
+		ethernet_layer['Ethernettype'] = struct.unpack('H',packet[12:14])[0]   #链路层协议类型
 		#self.packet_info['Ethernetlayer'] = ethernetlayer
 		return ethernet_layer,packet[14:]                   #返回链路层包头，链路层包数据部分
 
